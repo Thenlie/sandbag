@@ -1,4 +1,4 @@
-import { BrazilianCrux } from './scales'
+import { BrazilianCrux, Polish } from './scales'
 
 export { GradeScales, GradeScalesTypes, ConversionGroups, ConversionGroupsTypes, getAvgScore } from './GradeScale'
 export {
@@ -21,7 +21,8 @@ export {
   VScale,
   WI,
   YosemiteDecimal,
-  BrazilianCrux
+  BrazilianCrux,
+  Polish
 } from './scales'
 
 // Free Climbing Grades
@@ -35,7 +36,6 @@ export {
 // Ewbank South Africa
 // Nordic - Finnish
 // Brazilian
-// Kurtyka (Poland)
 
 const CLASS_ARRAY = [
   'Class 1',
@@ -335,7 +335,8 @@ export const freeClimbing = {
     Ewbank: EWBANK_ARRAY,
     Saxon: SAXON_ARRAY,
     Norwegian: NORWAY_ARRAY,
-    BrazilianCrux: BrazilianCrux.grades
+    BrazilianCrux: BrazilianCrux.grades,
+    Polish: Polish.grades
   },
   community: {}
 }
