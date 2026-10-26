@@ -32,8 +32,8 @@ describe('Swedish', () => {
     })
 
     test('Slash grade provided', () => {
-      expect(Swedish.getScore('4-/4')).toStrictEqual([31, 33])
-      expect(Swedish.getScore('5/5+')).toStrictEqual([46, 51])
+      expect(Swedish.getScore('4-/4')).toStrictEqual([34, 37])
+      expect(Swedish.getScore('5/5+')).toStrictEqual([51, 55])
       expect(Swedish.getScore('7+/8-')).toStrictEqual([73, 75])
       expect(Swedish.getScore('7+/7')).toStrictEqual([73, 75])
     })
@@ -85,15 +85,15 @@ describe('Swedish', () => {
 
     test('single score provided', () => {
       expect(Swedish.getGrade(25)).toBe('3')
-      expect(Swedish.getGrade(30)).toBe('4-')
-      expect(Swedish.getGrade(48)).toBe('5+')
+      expect(Swedish.getGrade(30)).toBe('3+')
+      expect(Swedish.getGrade(48)).toBe('5-')
       expect(Swedish.getGrade(55)).toBe('5+')
     })
     test('range of scores provided', () => {
-      expect(Swedish.getGrade([43, 44])).toBe('5-/5')
+      expect(Swedish.getGrade([43, 44])).toBe('4+')
       expect(Swedish.getGrade([71, 72])).toBe('7/7+')
-      expect(Swedish.getGrade([12, 15])).toBe('2')
-      expect(Swedish.getGrade([44, 55])).toBe('5/5+')
+      expect(Swedish.getGrade([12, 15])).toBe('2-/2')
+      expect(Swedish.getGrade([44, 55])).toBe('4+/5+')
     })
   })
 
