@@ -62,7 +62,7 @@ const getScore = (grade: string): number | Tuple => {
     // 5/5+
     let otherGrade
     if (slashGrade !== null) {
-      otherGrade = (typeof basicScore === 'number' ? basicScore : basicScore[1]) + 1
+      otherGrade = (basicScore as Tuple)[1] + 1
     }
     if (otherGrade !== undefined) {
       const nextGrade = findScoreRange(

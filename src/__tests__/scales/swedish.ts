@@ -1,5 +1,6 @@
 import { GradeBands } from '../../GradeBands'
 import { Swedish } from '../../scales'
+import { Swedish as SwedishFromIndex } from '../../index'
 
 describe('Swedish', () => {
   describe('Get Score', () => {
@@ -104,6 +105,12 @@ describe('Swedish', () => {
       expect(Swedish.getGrade(30)).toBe('3+')
       expect(Swedish.getGrade(48)).toBe('5-')
       expect(Swedish.getGrade(55)).toBe('5+')
+    })
+    test('non-integer score rounds up', () => {
+      expect(Swedish.getGrade(24.5)).toBe(Swedish.getGrade(25))
+    })
+    test('exported from package index', () => {
+      expect(SwedishFromIndex).toBe(Swedish)
     })
     test('range of scores provided', () => {
       expect(Swedish.getGrade([43, 44])).toBe('4+')
