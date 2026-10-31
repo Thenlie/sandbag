@@ -39,6 +39,22 @@ describe('Swedish', () => {
     })
   })
 
+  describe('Is Type', () => {
+    test('valid Swedish grades', () => {
+      expect(Swedish.isType('1-')).toBe(true)
+      expect(Swedish.isType('6')).toBe(true)
+      expect(Swedish.isType('11+')).toBe(true)
+      expect(Swedish.isType('7+/8-')).toBe(true)
+    })
+
+    test('invalid Swedish grades', () => {
+      expect(Swedish.isType('V11')).toBe(false)
+      expect(Swedish.isType('+5')).toBe(false)
+      expect(Swedish.isType('12')).toBe(false)
+      expect(Swedish.isType('5/5+/6-')).toBe(false)
+    })
+  })
+
   describe('Invalid grade format', () => {
     jest.spyOn(console, 'warn').mockImplementation()
     beforeEach(() => {
